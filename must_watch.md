@@ -25,5 +25,5 @@
 
 ## SDE sheet
 
-1.https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/
-2.https://www.techinterviewhandbook.org/grind75?weeks=26&hours=40&grouping=topics&order=difficulty
+1. https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/
+2. https://www.techinterviewhandbook.org/grind75?weeks=26&hours=40&grouping=topics&order=difficulty
