@@ -12,12 +12,11 @@ link - https://takeuforward.org/strivers-a2z-dsa-course/must-do-pattern-problems
 
 ### pattern 1
 
-****
-****
-****
-****
-
 ```
+****
+****
+****
+****
 for(var i =0; i<4;i++){
   for(var j=0;j<4;j++){
     print("* ");
@@ -28,13 +27,12 @@ for(var i =0; i<4;i++){
 
 ### pattern 2
 
+```
 *
 **
 ***
 ****
 *****
-
-```
 for(var i =0; i<4;i++){
   for(var j=0;j<=i;j++){  // with respect to i
     print("* ");
@@ -46,13 +44,12 @@ for(var i =0; i<4;i++){
 
 ### pattern 3
 
+```
 1
 12
 123
 1234
 12345
-
-```
 printPattern() {
   for (var i = 1; i <= 5; i++) {
     var row = " ";
@@ -71,13 +68,12 @@ void main() {
 
 ### pattern 4
 
+```
 1
 22
 333
 4444
 55555
-
-```
   for (var i = 1; i <= 5; i++) {
     var row = " ";
     for (var j = 1; j <= i; j++) {
