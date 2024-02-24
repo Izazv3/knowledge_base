@@ -52,3 +52,38 @@ void main() {
   print(res);
 }
 ```
+
+## Optimal solution
+
+```
+mergeOverlap(List<List<int>> arr) {
+  var n = arr.length;
+
+  arr.sort((a, b) => a[0] - b[0]);
+
+  var ans = [arr[0]];
+
+  for (var i = 0; i < n; i++) {
+    var last = ans.last;
+    var current = arr[i];
+
+    if (current[0] <= last[1]) {
+      last[1] = last[1] > current[1] ? last[1] : current[1];
+    } else {
+      ans.add(current);
+    }
+  }
+
+  return ans;
+}
+
+void main() {
+  var res = mergeOverlap([
+    [1, 3],
+    [8, 10],
+    [2, 6],
+    [15, 18]
+  ]);
+  print(res);
+}
+```
