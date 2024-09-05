@@ -2,18 +2,18 @@
 
 ### Reference --> https://youtu.be/DjYZk8nrXVY?si=zSPkPWkptZaqA91N
 
-0:33 => Prefix Sum
-1:25 => Two Pointer
-2:05 => Sliding Window
-2:54 => Fast & Slow Pointer
-3:39 => Linked List In-Place Reversal
-4:36 => Monotonic Stack
-5:26 => Top 'k' Elements
-6:14 => Quick Select
-6:33 => Overlapping Intervals
-7:25 => Modified Binary Search
-8:56 => Depth-First Search(DFS)
-9:32 => Breadth-First Search(BFS)
-10:11 => Matrix Traversal
-11:04 => Backtracking
-11:52 => Dynamic Programming
+1. Prefix Sum
+2. Two Pointer
+3. Sliding Window
+4. Fast & Slow Pointer
+5. Linked List In-Place Reversal
+6. Monotonic Stack
+7. Top 'k' Elements
+8. Quick Select
+9. Overlapping Intervals
+10. Modified Binary Search
+11. Depth-First Search(DFS)
+12. Breadth-First Search(BFS)
+13. Matrix Traversal
+14. Backtracking
+15. Dynamic Programming
