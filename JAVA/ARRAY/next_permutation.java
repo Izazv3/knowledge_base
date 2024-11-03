@@ -10,41 +10,42 @@ public class next_permutation {
         System.out.println("Next permutation : " + Arrays.toString(arr));
     }
 
-    private static void nextPermutation(int[] arr) {
-
-        int n = arr.length;
-        int i = n - 2;
-
-        if (i >= 0 && arr[i] >= arr[i + 1]) {
-            i--;
+    private static void nextPermutation(int[] nums) {
+        int index = -1;
+        int n = nums.length;
+        for (int i = n - 2; i >= 0; i--) {
+            if (nums[i] < nums[i + 1]) {
+                index = i;
+                break;
+            }
         }
+        if (index == -1) {
+            reverse(nums, 0);
+            return;
 
-        if (i >= 0) {
-
-            int j = n - 1;
-
-            while (arr[j] <= arr[i]) {
-
-                j--;
+        }
+        // next index which is greater than index
+        for (int i = n - 1; i >= index; i--) {
+            if (nums[index] < nums[i]) {
+                swap(nums, index, i);
+                break;
 
             }
-
-            swap(arr, i, j);
-
         }
 
-        reverse(arr, i + 1, n - 1);
+        reverse(nums, index + 1);
 
     }
 
-    private static void reverse(int[] arr, int i, int j) {
+    private static void reverse(int[] arr, int left) {
+        int right = arr.length - 1;
 
-        while (i < j) {
+        while (left < right) {
 
-            swap(arr, i, j);
+            swap(arr, left, right);
 
-            i++;
-            j--;
+            left++;
+            right--;
 
         }
 

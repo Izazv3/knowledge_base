@@ -1,5 +1,6 @@
 package JAVA.ARRAY;
 
+// kadane algorithm
 public class maximum_subarray {
 
     public static int maxSubarraySum(int[] arr, int n) {
