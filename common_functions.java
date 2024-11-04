@@ -21,4 +21,15 @@ class Main {
         arr[j] = temp;
 
     }
+
+    public static void printMatrix(int[][] matrix) {
+
+        for (int[] row : matrix) {
+            for (int element : row) {
+                System.out.print(element + " ");
+            }
+            System.out.println();
+        }
+
+    }
 }
