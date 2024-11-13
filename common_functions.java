@@ -22,14 +22,15 @@ class Main {
 
     }
 
-    public static void printMatrix(int[][] matrix) {
-
+    private static void printMatrix(int[][] matrix) {
+        System.out.println("**********************");
         for (int[] row : matrix) {
             for (int element : row) {
                 System.out.print(element + " ");
             }
             System.out.println();
         }
+        System.out.println("**********************");
 
     }
 }
