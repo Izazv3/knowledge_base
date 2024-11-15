@@ -13,7 +13,7 @@ public class reverse_linkedlist {
 
         printLinkedList(head);
 
-        head = reverseLinkedList(head);
+        head = reverseLinkedList2(head);
         printLinkedList(head);
 
     }
@@ -39,6 +39,25 @@ public class reverse_linkedlist {
         }
 
         return head;
+    }
+
+    // optimal approach O(n)
+    private static Node reverseLinkedList2(Node head) {
+        Node temp = head;
+
+        Node prev = null;
+
+        while (temp != null) {
+
+            Node front = temp.next;
+            temp.next = prev;
+            prev = temp;
+
+            temp = front;
+
+        }
+
+        return prev;
     }
 
     private static void printLinkedList(Node head) {
