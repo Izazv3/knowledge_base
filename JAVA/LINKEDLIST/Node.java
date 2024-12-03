@@ -2,7 +2,7 @@ package JAVA.LINKEDLIST;
 
 import java.util.Stack;
 
-public class reverse_linkedlist {
+class reverse_linkedlist {
 
     public static void main(String args[]) {
         Node head = new Node(1);
@@ -70,9 +70,9 @@ public class reverse_linkedlist {
     }
 }
 
-class Node {
-    int data;
-    Node next;
+public class Node {
+    public int data;
+    public Node next;
 
     Node(int data) {
         this.data = data;

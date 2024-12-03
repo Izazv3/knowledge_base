@@ -1,5 +1,7 @@
-class Main {
-    private static void reverse(int[] arr, int left, int right) {
+import JAVA.LINKEDLIST.Node;
+
+class CommonFunctions {
+    public static void reverse(int[] arr, int left, int right) {
 
         while (left < right) {
 
@@ -12,7 +14,7 @@ class Main {
 
     }
 
-    private static void swap(int[] arr, int i, int j) {
+    public static void swap(int[] arr, int i, int j) {
 
         int temp = arr[i];
 
@@ -22,7 +24,7 @@ class Main {
 
     }
 
-    private static void printMatrix(int[][] matrix) {
+    public static void printMatrix(int[][] matrix) {
         System.out.println("**********************");
         for (int[] row : matrix) {
             for (int element : row) {
@@ -32,5 +34,14 @@ class Main {
         }
         System.out.println("**********************");
 
+    }
+
+    public static void printLinkedList(Node head) {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
     }
 }
