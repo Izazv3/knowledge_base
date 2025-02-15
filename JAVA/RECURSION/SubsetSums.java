@@ -1,6 +1,7 @@
 package JAVA.RECURSION;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -21,7 +22,9 @@ public class SubsetSums {
     }
 
     private static void subsetSums(int[] arr, int index, int currentSum, List<Integer> result) {
+
         if (index == arr.length) {
+
             result.add(currentSum);
             return;
         }
