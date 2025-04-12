@@ -39,6 +39,8 @@ public class CombinationSum2 {
 
         for (int i = index; i < arr.length; i++) {
 
+            System.out.println("array index " + arr[i] + " target " + target);
+
             if (i > index && arr[i] == arr[i - 1])
                 continue;
 
