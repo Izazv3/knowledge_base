@@ -1,42 +1,84 @@
 # DSA Mastery Roadmap
 
-## Phase 1: Core Bread-and-Butter Topics
+### Phase 1 – Core Bread-and-Butter Topics
 
-Focus on these essentials first—they form the foundation for most interviews and problems.
+1. **Big-O Analysis**
 
-- **Big-O Analysis**: Understand time/space complexity, worst vs. average case, and common notations (e.g., O(log n), O(n log n)).
-- **Arrays & Strings**: Master traversal, two-pointer techniques, sliding windows, reversals, and subarray searches.
-- **Linked Lists**: Learn singly/doubly linked lists, reversal, cycle detection (Floyd's algorithm), and merging sorted lists.
-- **Stacks & Queues**: Implement stacks/queues, deques; apply to problems like balanced parentheses and BFS.
-- **Hash Tables / Maps / Sets**: Handle collisions, use for frequency counting, two-sum problems, and basic caching.
-- **Trees (Basics)**: Binary tree traversals (pre/in/post/level-order) and Binary Search Tree (BST) operations.
-- **Recursion & Backtracking**: Grasp call stacks; solve permutations, N-Queens, and subset problems.
-- **Searching & Sorting**: Binary search; sorts like merge, quick, insertion, and non-comparison sorts (counting, radix).
-- **Graph Fundamentals**: Adjacency lists/matrices, DFS, BFS, and connected components.
-- **Basic Dynamic Programming (DP)**: 1D/2D tables for Fibonacci, knapsack, and longest common subsequence.
-- **Bit Manipulation**: Bit operations like set/clear, masks, parity checks, and power-of-two detection.
+   - Time/space complexity, worst vs. average case.
+   - Common growth classes (log n, n log n, etc.).
 
-## Phase 2: Advancing Beyond the Basics
+2. **Arrays & Strings**
 
-Build on Phase 1 for advanced interviews and complex systems.
+   - Traversal, two-pointer technique, sliding window.
+   - In-place reversal, rotations, subarray/sub-string search.
 
-- Balanced BSTs (AVL, Red-Black) and Tries for efficient string storage.
-- Heaps & Priority Queues; use in Dijkstra’s algorithm.
-- Disjoint Set Union (Union-Find) with path compression and union by rank.
-- Advanced Graph Algorithms: Topological sort, shortest paths (Bellman-Ford, Floyd-Warshall), MST (Kruskal, Prim).
-- Segment Trees / Fenwick Trees for range queries and updates.
-- Advanced DP Patterns: Tree DP, digit DP, bitmask DP.
-- String Algorithms: KMP, Z-algorithm, Rabin-Karp for pattern matching.
-- Computational Geometry: Convex hull, line sweep (if relevant to contests).
-- Probabilistic Structures: Bloom filters, skip lists.
-- Memory Optimization: Constant-space two-pointers, DP state compression.
+3. **Linked Lists**
 
-## Study Tips
+   - Singly/doubly, fast-slow pointer patterns.
+   - Reversal, cycle detection (Floyd), merge two sorted lists.
 
-- **Active Learning**: Implement concepts from scratch and hand-write explanations.
-- **Practice Strategy**: Start with easy problems (LeetCode Easy), progress to medium/hard; aim for 60% coding, 20% theory, 20% analysis.
-- **Debugging**: Use visual tools to track pointers and states.
-- **Retention**: Teach concepts or blog about solutions.
-- **Pacing**: Complete Phase 1 before Phase 2 for better retention.
+4. **Stacks & Queues**
 
-Track your progress by checking off topics as you master them. For resources, refer to platforms like LeetCode, GeeksforGeeks, or books like "Introduction to Algorithms" by Cormen. Happy learning!
+   - Stack via array/linked list.
+   - Queue, circular queue, deque.
+   - Applications: balanced-parentheses, Next Greater Element, BFS.
+
+5. **Hash Tables / Maps / Sets**
+
+   - Collision handling (chaining, open addressing).
+   - Frequency counting, two-sum style lookup, LRU cache idea.
+
+6. **Trees (Basics)**
+
+   - Binary Tree traversals (pre/in/post/level).
+   - Binary Search Tree (BST) operations & properties.
+
+7. **Recursion & Backtracking**
+
+   - Recurrence intuition, call stack.
+   - Classic problems: permutations, N-Queens, subset sum.
+
+8. **Searching & Sorting**
+
+   - Binary search (iterative & recursive).
+   - Sorts: selection, insertion, merge, quick, counting/radix (when stable linear sorts matter).
+
+9. **Graph Fundamentals**
+
+   - Representation (adjacency list/matrix).
+   - DFS, BFS; connected components.
+
+10. **Basic Dynamic Programming (DP)**
+
+    - 1-D & 2-D DP table formulation.
+    - Fibonacci variants, knapsack (0/1), longest common subsequence.
+
+11. **Bit Manipulation (Interview Staples)**
+    - Set/clear/toggle bit, bit masks, parity, power-of-two check.
+
+---
+
+### Phase 2 – Advancing Beyond the Basics
+
+1. Balanced BSTs (AVL, Red-Black), Tries.
+2. Heap & Priority Queue; applications like Dijkstra’s shortest path.
+3. Disjoint Set / Union-Find with path compression and union by rank.
+4. Advanced Graph Algorithms: Topological sort, Kahn’s algorithm, Bellman-Ford, Floyd-Warshall, Minimum Spanning Tree (Kruskal, Prim).
+5. Segment Tree / Fenwick Tree (Binary Indexed Tree) for range queries.
+6. More Dynamic Programming patterns: DP on trees, digit DP, bitmask DP.
+7. String Algorithms: KMP, Z-algorithm, Rabin-Karp, suffix arrays/automata for suffix-based problems.
+8. Computational Geometry (convex hull, line sweep) – if contest-heavy.
+9. Probabilistic & Approximate structures: Bloom filter, Skip list.
+10. Memory-efficient tricks: Two-pointer with constant space, DP state compression.
+
+---
+
+### Study Tips
+
+- **Learn actively**: After reading a concept, hand-write the key laws and implement from scratch without peeking.
+- **Practice ladder**: Start with easy (LeetCode Easy / CodeSignal Arcade), advance to medium, sprinkle hard.
+- **Debug discipline**: Use print-statements or visual debuggers to watch pointers, recursion, and DP tables evolve.
+- **Teach & blog**: Explaining a solution forces clarity.
+- **Daily mix**: Allocate 60% time coding problems, 20% reviewing theory, 20% analyzing other people’s solutions.
+
+Commit to finishing Phase 1 first; it makes every later topic far easier to digest. Happy coding!
