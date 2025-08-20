@@ -1,44 +1,28 @@
 
-import java.util.Arrays;
-
 public class TestRun {
 
     public static void main(String[] args) {
-        int[] arr = { 1, 1, 2, 5, 4, 6, 7, 8 };
+        int[] arr = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
 
-        int[] res = findRepeatAndMissingNumber(arr);
+        int maxSum = maxSubarraySum(arr);
 
-        // int res = countInversion(arr);
-
-        System.out.println("duplicate number is  >>> " + Arrays.toString(res));
+        System.out.println("The maximum subarray sum is: " + maxSum);
 
     }
 
-    private static int[] findRepeatAndMissingNumber(int[] arr) {
-        int repeated = -1;
-
-        int missed = -1;
+    private static int maxSubarraySum(int[] arr) {
+        int currentSum = arr[0];
+        int maxSum = arr[0];
 
         for (int i = 1; i < arr.length; i++) {
 
-            int count = 0;
-
-            for (int j = 0; j < arr.length; j++) {
-                if (arr[j] == i) {
-                    count++;
-                }
-            }
-
-            if (count == 2) {
-                repeated = i;
-            } else if (count == 0) {
-                missed = i;
-            }
+            currentSum = Math.max(arr[i], currentSum + arr[i]);
+            maxSum = Math.max(maxSum, currentSum);
 
         }
 
-        int[] result = { repeated, missed };
-        return result;
+        return maxSum;
     }
 
+    \
 }

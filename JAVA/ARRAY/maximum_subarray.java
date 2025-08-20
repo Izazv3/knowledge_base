@@ -3,20 +3,20 @@ package JAVA.ARRAY;
 // kadane algorithm
 public class maximum_subarray {
 
-    public static int maxSubarraySum(int[] arr, int n) {
+    // Kadane's Algorithm
+    private static int maxSubarraySum(int[] arr, int n) {
+        int maxSum = arr[0]; // Initialize with first element
+        int currentSum = arr[0]; // Current subarray sum
 
-        int currenSum = arr[0];
-        int maxSum = arr[0];
+        for (int i = 1; i < n; i++) {
+            // Either extend the current subarray OR start a new one from arr[i]
+            currentSum = Math.max(arr[i], currentSum + arr[i]);
 
-        for (int i = 1; i < arr.length; i++) {
-
-            currenSum = Math.max(arr[i], currenSum + arr[i]);
-            maxSum = Math.max(maxSum, currenSum);
-
+            // Update maxSum if we found a new best
+            maxSum = Math.max(maxSum, currentSum);
         }
 
         return maxSum;
-
     }
 
     public static void main(String args[]) {
