@@ -28,6 +28,7 @@ public class merge_sort {
 
         ArrayList<Integer> temp = new ArrayList<>(); // temporary array
         int left = low; // starting index of left half of arr
+
         int right = mid + 1; // starting index of right half of arr
 
         // storing elements in the temporary array in a sorted manner//

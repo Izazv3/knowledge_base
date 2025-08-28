@@ -1,28 +1,43 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class TestRun {
-
     public static void main(String[] args) {
-        int[] arr = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+        int[] heights = { 2, 4, 1, 2, 3, 2, 2, 1 };
+        int result = trap(heights);
 
-        int maxSum = maxSubarraySum(arr);
-
-        System.out.println("The maximum subarray sum is: " + maxSum);
-
+        System.out.println("max water tapped unit is : " + result);
     }
 
-    private static int maxSubarraySum(int[] arr) {
-        int currentSum = arr[0];
-        int maxSum = arr[0];
+    private static int trap(int[] heights) {
+        int leftMax = 0;
+        int rightMax = 0;
+        int water = 0;
+        int left = 0;
+        int right = heights.length - 1;
 
-        for (int i = 1; i < arr.length; i++) {
+        while (left < right) {
 
-            currentSum = Math.max(arr[i], currentSum + arr[i]);
-            maxSum = Math.max(maxSum, currentSum);
+            if (heights[left] < heights[right]) {
+                if (leftMax <= heights[left]) {
+                    leftMax = heights[left];
+                } else {
+                    water += leftMax - heights[left];
+                }
+                left++;
+            } else {
+                if (rightMax <= heights[right]) {
+                    rightMax = heights[right];
+                } else {
+                    water += rightMax - heights[right];
+                }
+                right--;
+            }
 
         }
 
-        return maxSum;
+        return water;
+
     }
 
-    \
 }

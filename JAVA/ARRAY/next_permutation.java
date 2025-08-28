@@ -6,7 +6,7 @@ public class next_permutation {
 
     public static void main(String args[]) {
         int[] arr = { 1, 3, 2 };
-        nextPermutation(arr);
+        nextPermutation2(arr);
         System.out.println("Next permutation : " + Arrays.toString(arr));
     }
 
@@ -59,6 +59,29 @@ public class next_permutation {
 
         arr[j] = temp;
 
+    }
+
+    private static void nextPermutation2(int[] arr) {
+        int n = arr.length;
+        int i = n - 2;
+
+        // Step 1: Find the first decreasing element from the end
+        while (i >= 0 && arr[i] >= arr[i + 1]) {
+            i--;
+        }
+
+        if (i >= 0) {
+            // Step 2: Find element just larger than arr[i] from the end
+            int j = n - 1;
+            while (arr[j] <= arr[i]) {
+                j--;
+            }
+            // Step 3: Swap
+            swap(arr, i, j);
+        }
+
+        // Step 4: Reverse the suffix
+        reverse(arr, i + 1);
     }
 
 }
