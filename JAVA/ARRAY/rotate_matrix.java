@@ -3,6 +3,7 @@ package JAVA.ARRAY;
 public class rotate_matrix {
     public static void main(String args[]) {
         int[][] arr = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+        printMatrix(arr);
         rotate(arr);
         printMatrix(arr);
     }
@@ -15,6 +16,7 @@ public class rotate_matrix {
             }
             System.out.println();
         }
+        System.out.println("############################");
 
     }
 
