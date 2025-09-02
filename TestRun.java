@@ -1,52 +1,53 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class TestRun {
+
     public static void main(String args[]) {
-        int[][] arr = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-        printMatrix(arr);
-        rotate(arr);
-        printMatrix(arr);
+        int[] start = { 1, 3, 0, 5, 8, 5 };
+        int[] end = { 2, 4, 6, 7, 9, 9 };
+        int n = start.length;
+
+        findMaxMeetings(start, end, n);
     }
 
-    private static void rotate(int[][] arr) {
-        int n = arr.length;
+    private static void findMaxMeetings(int[] start, int[] end, int n) {
+
+        ArrayList<Meeting> meetings = new ArrayList<>();
 
         for (int i = 0; i < n; i++) {
 
-            for (int j = i; j < n; j++) {
+            meetings.add(new Meeting(start[i], end[i], i + 1));
 
-                swap(arr, i, j, j, i);
+        }
 
+        ArrayList<Integer> selectedMeetingIndex = new ArrayList<>();
+        int lastEndTime = -1;
+
+        for (int i = 0; i < meetings.size(); i++) {
+
+            if (meetings.get(i).start > lastEndTime) {
+                selectedMeetingIndex.add(meetings.get(i).index);
+                lastEndTime = meetings.get(i).end;
             }
 
         }
 
-        for (int i = 0; i < n; i++) {
-
-            for (int j = 0; j < n / 2; j++) {
-
-                swap(arr, i, j, i, n - 1 - j);
-
-            }
-
-        }
+        System.out.println(selectedMeetingIndex.toString());
 
     }
 
-    private static void swap(int[][] arr, int i1, int j1, int i2, int j2) {
-        int temp = arr[i1][j1];
-        arr[i1][j1] = arr[i2][j2];
-        arr[i2][j2] = temp;
-    }
+}
 
-    public static void printMatrix(int[][] matrix) {
+class Meeting {
+    int start;
+    int end;
+    int index;
 
-        for (int[] row : matrix) {
-            for (int element : row) {
-                System.out.print(element + " ");
-            }
-            System.out.println();
-        }
-        System.out.println("############################");
+    Meeting(int start, int end, int index) {
+        this.start = start;
+        this.end = end;
+        this.index = index;
 
     }
 

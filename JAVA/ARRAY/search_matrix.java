@@ -5,7 +5,7 @@ public class search_matrix {
     public static void main(String args[]) {
         int[][] matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9, 10 } };
 
-        int target = 5;
+        int target = 11;
 
         boolean hasTarget = binarySearchMatrix(matrix, target);
         System.out.println("has target >>>> " + hasTarget);
