@@ -4,51 +4,57 @@ import java.util.Arrays;
 public class TestRun {
 
     public static void main(String args[]) {
-        int[] start = { 1, 3, 0, 5, 8, 5 };
-        int[] end = { 2, 4, 6, 7, 9, 9 };
-        int n = start.length;
 
-        findMaxMeetings(start, end, n);
+        Node head1 = new Node(1);
+
+        head1.next = new Node(5);
+        head1.next.next = new Node(8);
+        head1.next.next.next = new Node(7);
+        head1.next.next.next.next = new Node(2);
+        head1.next.next.next.next.next = new Node(0);
+        head1.next.next.next.next.next.next = new Node(3);
+
+        printNode(head1);
+        Node res = reverseNode(head1);
+        printNode(res);
+
     }
 
-    private static void findMaxMeetings(int[] start, int[] end, int n) {
-
-        ArrayList<Meeting> meetings = new ArrayList<>();
-
-        for (int i = 0; i < n; i++) {
-
-            meetings.add(new Meeting(start[i], end[i], i + 1));
-
+    private static Node reverseNode(Node head1) {
+        if (head1 == null || head1.next == null) {
+            return head1;
         }
 
-        ArrayList<Integer> selectedMeetingIndex = new ArrayList<>();
-        int lastEndTime = -1;
+        Node newHead = reverseNode(head1.next);
 
-        for (int i = 0; i < meetings.size(); i++) {
+        head1.next.next = head1;
 
-            if (meetings.get(i).start > lastEndTime) {
-                selectedMeetingIndex.add(meetings.get(i).index);
-                lastEndTime = meetings.get(i).end;
-            }
+        head1.next = null;
 
+        return newHead;
+    }
+
+    private static void printNode(Node head1) {
+        Node temp = head1;
+
+        while (temp != null) {
+
+            System.out.print(temp.data + " ");
+            temp = temp.next;
         }
 
-        System.out.println(selectedMeetingIndex.toString());
+        System.out.println("");
 
     }
 
 }
 
-class Meeting {
-    int start;
-    int end;
-    int index;
+class Node {
+    int data;
+    Node next;
 
-    Meeting(int start, int end, int index) {
-        this.start = start;
-        this.end = end;
-        this.index = index;
-
+    Node(int data) {
+        this.data = data;
+        this.next = null;
     }
-
 }

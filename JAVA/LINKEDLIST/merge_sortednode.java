@@ -22,6 +22,33 @@ public class merge_sortednode {
         printLinkedList(mergeNode(head1, head2));
     }
 
+    private static Node mergeNodes(Node h1, Node h2) {
+        Node dummy = new Node(-1);
+
+        Node tail = dummy;
+
+        while (h1 != null && h2 != null) {
+
+            if (h1.data < h2.data) {
+                tail.next = h1;
+
+                h1 = h1.next;
+            } else {
+                tail.next = h2;
+                h2 = h2.next;
+            }
+            tail = tail.next;
+
+        }
+
+        if (h1 != null)
+            tail.next = h1;
+        if (h2 != null)
+            tail.next = h2;
+
+        return dummy.next;
+    }
+
     private static Node mergeNode(Node head1, Node head2) {
 
         ArrayList<Integer> array = new ArrayList<>();
@@ -72,4 +99,5 @@ public class merge_sortednode {
         }
         System.out.println();
     }
+
 }

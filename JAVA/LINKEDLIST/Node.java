@@ -68,6 +68,21 @@ class reverse_linkedlist {
         }
         System.out.println();
     }
+
+    public static Node reverse(Node head) {
+        Node prev = null;
+        Node curr = head;
+        Node next = null;
+
+        while (curr != null) {
+            next = curr.next; // store next
+            curr.next = prev; // reverse link
+            prev = curr; // move prev forward
+            curr = next; // move curr forward
+        }
+
+        return prev; // new head
+    }
 }
 
 public class Node {
