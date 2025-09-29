@@ -22,6 +22,7 @@ public class CombinationSum1 {
     }
 
     private static void backTrack(int[] arr, int target, List<Integer> current, int index, List<List<Integer>> result) {
+        System.out.println("backtrack called >>> " + target);
 
         if (target == 0) {
             result.add(new ArrayList<>(current));

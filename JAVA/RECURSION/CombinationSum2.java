@@ -41,12 +41,17 @@ public class CombinationSum2 {
 
             System.out.println("array index " + arr[i] + " target " + target);
 
-            if (i > index && arr[i] == arr[i - 1])
+            if (i > index && arr[i] == arr[i - 1]) {
+                System.out.println("loop continued");
                 continue;
+            }
 
             // Optimization: if current element is greater than target, no need to proceed
-            if (arr[i] > target)
+            if (arr[i] > target) {
+                System.out.println("loop breaks");
+
                 break;
+            }
 
             current.add(arr[i]);
 

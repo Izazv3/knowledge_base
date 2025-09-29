@@ -1,60 +1,62 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class TestRun {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
+        int[] arr = { 2, 3, 6, 7 };
+        int target = 7;
 
-        Node head1 = new Node(1);
+        List<List<Integer>> result = combinationSum2(arr, target);
 
-        head1.next = new Node(5);
-        head1.next.next = new Node(8);
-        head1.next.next.next = new Node(7);
-        head1.next.next.next.next = new Node(2);
-        head1.next.next.next.next.next = new Node(0);
-        head1.next.next.next.next.next.next = new Node(3);
-
-        printNode(head1);
-        Node res = reverseNode(head1);
-        printNode(res);
-
+        for (var r : result) {
+            System.out.println(r);
+        }
     }
 
-    private static Node reverseNode(Node head1) {
-        if (head1 == null || head1.next == null) {
-            return head1;
+    private static List<List<Integer>> combinationSum2(int[] arr, int target) {
+        List<List<Integer>> result = new ArrayList<>();
+
+        Arrays.sort(arr);
+
+        backTrack(arr, target, new ArrayList<>(), 0, result);
+
+        return result;
+    }
+
+    private static void backTrack(int[] arr, int target, List<Integer> current, int index,
+            List<List<Integer>> result) {
+        System.out.println("backtrack called >> " + target);
+
+        if (target == 0) {
+            result.add(new ArrayList<>(current));
+            return;
         }
 
-        Node newHead = reverseNode(head1.next);
+        // if (target < 0) {
+        // return;
+        // }
 
-        head1.next.next = head1;
+        for (int i = index; i < arr.length; i++) {
 
-        head1.next = null;
+            if (index < i && arr[i] == arr[i - 1]) {
+                System.out.println("loop continue");
 
-        return newHead;
-    }
+                continue;
+            }
 
-    private static void printNode(Node head1) {
-        Node temp = head1;
+            if (arr[i] > target) {
+                System.out.println("loop breaks");
 
-        while (temp != null) {
+                break;
+            }
 
-            System.out.print(temp.data + " ");
-            temp = temp.next;
+            current.add(arr[i]);
+            backTrack(arr, target - arr[i], current, i + 1, result);
+            current.remove(current.size() - 1);
+
         }
 
-        System.out.println("");
-
-    }
-
-}
-
-class Node {
-    int data;
-    Node next;
-
-    Node(int data) {
-        this.data = data;
-        this.next = null;
     }
 }
