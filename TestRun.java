@@ -5,58 +5,90 @@ import java.util.List;
 public class TestRun {
 
     public static void main(String[] args) {
-        int[] arr = { 2, 3, 6, 7 };
-        int target = 7;
 
-        List<List<Integer>> result = combinationSum2(arr, target);
+        int n = 4;
 
-        for (var r : result) {
-            System.out.println(r);
+        char[][] board = new char[n][n];
+
+        for (char[] row : board) {
+            Arrays.fill(row, '.');
         }
+
+        List<List<String>> result = new ArrayList<>();
+
+        solverNQueens(result, board, 0, n);
+
+        for (List<String> r : result) {
+            for (String k : r) {
+                System.out.println(k);
+            }
+            System.out.println();
+
+        }
+
     }
 
-    private static List<List<Integer>> combinationSum2(int[] arr, int target) {
-        List<List<Integer>> result = new ArrayList<>();
+    private static void solverNQueens(List<List<String>> result, char[][] board, int row, int n) {
 
-        Arrays.sort(arr);
-
-        backTrack(arr, target, new ArrayList<>(), 0, result);
-
-        return result;
-    }
-
-    private static void backTrack(int[] arr, int target, List<Integer> current, int index,
-            List<List<Integer>> result) {
-        System.out.println("backtrack called >> " + target);
-
-        if (target == 0) {
-            result.add(new ArrayList<>(current));
+        if (row == n) {
+            result.add(constructBoard(board));
             return;
         }
 
-        // if (target < 0) {
-        // return;
-        // }
+        for (int col = 0; col < n; col++) {
 
-        for (int i = index; i < arr.length; i++) {
-
-            if (index < i && arr[i] == arr[i - 1]) {
-                System.out.println("loop continue");
-
-                continue;
+            if (isSafe(board, row, col, n)) {
+                board[row][col] = 'Q';
+                solverNQueens(result, board, row + 1, n);
+                board[row][col] = '.';
             }
-
-            if (arr[i] > target) {
-                System.out.println("loop breaks");
-
-                break;
-            }
-
-            current.add(arr[i]);
-            backTrack(arr, target - arr[i], current, i + 1, result);
-            current.remove(current.size() - 1);
 
         }
 
+        return;
+
     }
+
+    private static boolean isSafe(char[][] board, int row, int col, int n) {
+
+        for (int i = 0; i < row; i++) {
+
+            if (board[i][col] == 'Q')
+                return false;
+
+        }
+
+        // top left diagonal
+
+        for (int i = row, j = col; i >= 0 && j >= 0; i--, j--) {
+
+            if (board[i][j] == 'Q')
+                return false;
+
+        }
+
+        // top right diagonal
+
+        for (int i = row, j = col; i >= 0 && j < n; i--, j++) {
+
+            if (board[i][j] == 'Q')
+                return false;
+
+        }
+
+        return true;
+    }
+
+    private static List<String> constructBoard(char[][] board) {
+
+        List<String> res = new ArrayList<>();
+
+        for (char[] row : board) {
+            res.add(new String(row));
+        }
+
+        return res;
+
+    }
+
 }

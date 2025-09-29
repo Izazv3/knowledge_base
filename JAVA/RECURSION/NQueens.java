@@ -14,7 +14,7 @@ public class NQueens {
         for (char[] row : board)
             Arrays.fill(row, '.');
 
-        result = solverNQueens(result, board, 4);
+        result = solverNQueens(result, board, n);
 
         for (List<String> r : result) {
             for (String k : r) {
