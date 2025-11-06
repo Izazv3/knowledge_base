@@ -30,6 +30,7 @@ public class SubsetSums {
 
         subsetSums(arr, index + 1, currentSum + arr[index], result);
         subsetSums(arr, index + 1, currentSum, result);
+
     }
 
 }

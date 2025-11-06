@@ -54,4 +54,24 @@ public class PatternMatchingZAlgorithm {
         return Z;
     }
 
+    // sub string method
+    private static void findPatternIndexes2(String text, String pattern) {
+
+        int n = text.length();
+        int m = pattern.length();
+
+        for (int i = 0; i < n; i++) {
+
+            String sub = text.substring(i, i + m);
+
+            System.out.println("Sub >>>> " + sub);
+
+            if (sub.equals(pattern)) {
+                System.out.print(i + " ");
+            }
+
+        }
+
+    }
+
 }
