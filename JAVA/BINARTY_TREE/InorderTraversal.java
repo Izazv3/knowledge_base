@@ -17,11 +17,13 @@ public class InorderTraversal {
         root.right = new TreeNode(3);
         root.left.left = new TreeNode(4);
         root.left.right = new TreeNode(5);
+        root.left.right.right = new TreeNode(6);
 
         List<Integer> result = new ArrayList<>();
 
         // inorder(root, result);
-        preorder(root, result);
+        // preorder(root, result);
+        postorder(root, result);
 
         System.out.println("travered inorder list >>> " + result.toString());
 
@@ -46,6 +48,17 @@ public class InorderTraversal {
 
         preorder(root.left, result);
         preorder(root.right, result);
+    }
+
+    private static void postorder(TreeNode root, List<Integer> result) {
+        if (root == null) {
+            return;
+        }
+
+        postorder(root.left, result);
+        postorder(root.right, result);
+        result.add(root.value);
+
     }
 
 }
