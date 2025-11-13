@@ -62,16 +62,3 @@ public class InorderTraversal {
     }
 
 }
-
-class TreeNode {
-    int value;
-
-    TreeNode left, right;
-
-    TreeNode(int val) {
-        this.value = val;
-
-        left = right = null;
-    }
-
-}

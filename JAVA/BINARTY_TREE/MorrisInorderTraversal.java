@@ -48,12 +48,13 @@ public class MorrisInorderTraversal {
 
                     prev.right = current;
 
-                    result.add(current.value);
+                    // result.add(current.value); --> for pre order
 
                     current = current.left;
 
                 } else {
                     prev.right = null;
+                    result.add(current.value);
 
                     current = current.right;
                 }
@@ -100,19 +101,6 @@ public class MorrisInorderTraversal {
         if (root == null)
             return 0;
         return 1 + Math.max(getHeight(root.left), getHeight(root.right));
-    }
-
-}
-
-class TreeNode {
-    int value;
-
-    TreeNode left, right;
-
-    TreeNode(int val) {
-        this.value = val;
-
-        left = right = null;
     }
 
 }
