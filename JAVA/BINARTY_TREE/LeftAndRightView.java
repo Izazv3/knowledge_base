@@ -1,6 +1,8 @@
 package JAVA.BINARTY_TREE;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class LeftAndRightView {
 
@@ -19,9 +21,48 @@ public class LeftAndRightView {
 
         ArrayList<Integer> result = new ArrayList<>();
 
-        leftView(root, result, 0);
+        // leftView(root, result, 0);
+
+        leftviewWithQueue(root, result);
 
         System.out.println(result.toString());
+
+    }
+
+    private static void leftviewWithQueue(TreeNode root, ArrayList<Integer> result) {
+
+        Queue<TreeNode> queue = new LinkedList<>();
+
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+
+            int size = queue.size();
+
+            for (int i = 0; i < size; i++) {
+
+                TreeNode node = queue.poll();
+
+                // first node
+
+                if (i == 0) {
+                    result.add(node.value);
+                }
+
+                // last node for right view
+
+                // if (i == size - 1) {
+                // result.add(node.value);
+                // }
+
+                if (node.left != null)
+                    queue.add(node.left);
+                if (node.right != null)
+                    queue.add(node.right);
+
+            }
+
+        }
 
     }
 
@@ -48,6 +89,7 @@ public class LeftAndRightView {
         rightView(root.left, result, level + 1);
 
     }
+
 }
 
 // https://static.takeuforward.org/content/right-left-tree-image1-LK79LuMP. -->
