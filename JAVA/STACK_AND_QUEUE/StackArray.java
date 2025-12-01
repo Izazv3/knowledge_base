@@ -19,5 +19,33 @@ public class StackArray {
 
         System.out.println("Is stack empty? " + stack.isEmpty());
 
+        StackUsingQueue st = new StackUsingQueue();
+
+        // Array of commands
+        String[] commands = { "QueueStack", "push", "push",
+                "pop", "top", "isEmpty" };
+        int[][] inputs = { {}, { 4 }, { 8 }, {}, {}, {} };
+
+        for (int i = 0; i < commands.length; ++i) {
+            switch (commands[i]) {
+                case "push":
+                    st.push(inputs[i][0]);
+                    System.out.print("null ");
+                    break;
+                case "pop":
+                    System.out.print(st.pop() + " ");
+                    break;
+                case "top":
+                    System.out.print(st.top() + " ");
+                    break;
+                case "isEmpty":
+                    System.out.print(st.isEmpty() ? "true " : "false ");
+                    break;
+                case "QueueStack":
+                    System.out.print("null ");
+                    break;
+            }
+        }
+
     }
 }
