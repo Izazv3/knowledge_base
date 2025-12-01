@@ -64,43 +64,4 @@ public class MorrisInorderTraversal {
         }
     }
 
-    static void printTree(TreeNode root) {
-        int height = getHeight(root);
-        int width = (int) Math.pow(2, height) - 1;
-        String[][] res = new String[height][width];
-
-        // Fill with spaces
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                res[i][j] = " ";
-            }
-        }
-
-        fill(res, root, 0, 0, width - 1);
-
-        // Print result
-        for (String[] row : res) {
-            for (String val : row) {
-                System.out.print(val);
-            }
-            System.out.println();
-        }
-    }
-
-    static void fill(String[][] res, TreeNode root, int level, int left, int right) {
-        if (root == null || left > right)
-            return;
-
-        int mid = (left + right) / 2;
-        res[level][mid] = String.valueOf(root.value);
-        fill(res, root.left, level + 1, left, mid - 1);
-        fill(res, root.right, level + 1, mid + 1, right);
-    }
-
-    static int getHeight(TreeNode root) {
-        if (root == null)
-            return 0;
-        return 1 + Math.max(getHeight(root.left), getHeight(root.right));
-    }
-
 }
