@@ -19,6 +19,8 @@ public class StackArray {
 
         System.out.println("Is stack empty? " + stack.isEmpty());
 
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&");
+
         StackUsingQueue st = new StackUsingQueue();
 
         // Array of commands
