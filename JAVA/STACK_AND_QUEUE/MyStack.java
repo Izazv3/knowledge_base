@@ -1,13 +1,13 @@
 package JAVA.STACK_AND_QUEUE;
 
-public class Stack {
+public class MyStack {
     int[] arr;
 
     int top; // index of the top element
 
     int capacity; // maximum number of elements stack can hold. (arr size)
 
-    Stack(int size) {
+    MyStack(int size) {
         arr = new int[size];
 
         top = -1;
