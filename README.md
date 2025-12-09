@@ -1,23 +1,24 @@
 # coding interview placement guide
 
+## Explore Algorithm
 
-## Explore Algorithm 
-
-1. Take you forward (placement series(84), tree series(54), dynamic programming series(57), graph series(56))  - https://www.youtube.com/@takeUforward
+1. Take you forward (placement series(84), tree series(54), dynamic programming series(57), graph series(56)) - https://www.youtube.com/@takeUforward
 2. Kunal kushwaha (open source and devops, oops series(7)) - https://www.youtube.com/@KunalKushwaha
 3. Nick white (professional leat coder) - https://www.youtube.com/@NickWhite
-4. Tech dose (zoho solution)  - https://www.youtube.com/@techdose4u
-5. Leat code by Fraz (DSA roadmap, working in google)  - https://www.youtube.com/@mohammadfraz
+4. Tech dose (zoho solution) - https://www.youtube.com/@techdose4u
+5. Leat code by Fraz (DSA roadmap, working in google) - https://www.youtube.com/@mohammadfraz
 6. Neet code (python solutions) - https://www.youtube.com/@NeetCode
 7. Algorithms made easy (java solutions) - https://www.youtube.com/@AlgorithmsMadeEasy
 8. Clement (worked in facebook and google, checkout leetcode videos) - https://www.youtube.com/@clem
-9. Kevin Naughton Jr (solutions for rare problems)  - https://www.youtube.com/@KevinNaughtonJr
+9. Kevin Naughton Jr (solutions for rare problems) - https://www.youtube.com/@KevinNaughtonJr
 
+## DSA Bootcamp Java
+
+1. https://github.com/kunal-kushwaha/DSA-Bootcamp-Java
 
 ## solution for problem
 
 1. Nick white solution
-
 
 ## Basic fundamentals
 
