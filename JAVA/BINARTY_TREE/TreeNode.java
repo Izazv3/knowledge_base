@@ -1,11 +1,11 @@
 package JAVA.BINARTY_TREE;
 
 public class TreeNode {
-    int value;
+    public int value;
 
-    TreeNode left, right;
+    public TreeNode left, right;
 
-    TreeNode(int val) {
+    public TreeNode(int val) {
         this.value = val;
 
         left = right = null;
