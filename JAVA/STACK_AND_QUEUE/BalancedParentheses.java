@@ -8,6 +8,20 @@ public class BalancedParentheses {
         String str = "{[()]}";
 
         System.out.println("is balanced >>>> " + isBalanced(str));
+
+        String[] arr = { "{}", "{]", "(]" };
+
+        ArrayList<String> result = new ArrayList<>();
+
+        for (String s : arr) {
+            if (isBalanced(s)) {
+                result.add("YES");
+            } else {
+                result.add("NO");
+            }
+        }
+
+        System.out.println(result);
     }
 
     private static boolean isBalanced(String str) {
@@ -17,7 +31,9 @@ public class BalancedParentheses {
         for (char c : str.toCharArray()) {
 
             if (c == '{' || c == '[' || c == '(') {
+
                 stack.push(c);
+
             } else if (c == '}' || c == ']' || c == ')') {
 
                 if (stack.isEmpty())
@@ -25,12 +41,12 @@ public class BalancedParentheses {
 
                 char top = stack.pop();
 
-                if ((top != '{' && c == '}') ||
-                        (top != '[' && c == ']') ||
-                        (top != '(' && c == ')'))
+                if ((top == '{' && c != '}') || (top == '[' && c != ']') || (top == '(' && c != ')')) {
                     return false;
+                }
 
             }
+
         }
 
         return stack.isEmpty();
