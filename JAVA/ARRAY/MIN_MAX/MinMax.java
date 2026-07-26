@@ -1,4 +1,4 @@
-package JAVA.ARRAY;
+package JAVA.ARRAY.MIN_MAX;
 
 public class MinMax {
 
