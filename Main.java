@@ -1,27 +1,47 @@
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
 
-    private static int maxSubarraySum(int[] arr, int n) {
+    public static void main(String args[]) {
 
-        int currentSum = arr[0];
-        int maxSum = arr[0];
+        int[][] arr = { { 1, 2 }, { 2, 6 }, { 8, 11 }, { 2, 7 }, { 12, 15 } };
 
-        for (int i = 1; i < n; i++) {
+        int[][] result = mergeOverlapIntervals(arr);
 
-            currentSum = Math.max(arr[i], currentSum + arr[i]);
-            maxSum = Math.max(maxSum, currentSum);
-
-        }
-
-        return maxSum;
+        System.out.println("result >>>> " + Arrays.deepToString(result));
 
     }
 
-    public static void main(String args[]) {
-        int[] arr = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
-        int n = arr.length;
-        int maxSum = maxSubarraySum(arr, n);
-        System.out.println("The maximum sub sum is: " + maxSum);
+    private static int[][] mergeOverlapIntervals(int[][] arr) {
+
+        Arrays.sort(arr, (a, b) -> Integer.compare(a[0], b[0]));
+
+        List<int[]> mergedIntervals = new ArrayList<>();
+
+        int[] currentInterval = arr[0];
+
+        mergedIntervals.add(currentInterval);
+
+        for (int[] interval : arr) {
+
+            int currentEnd = currentInterval[1];
+
+            int nextStart = interval[0];
+            int nextEnd = interval[1];
+
+            if (currentEnd >= nextStart) {
+                currentInterval[1] = nextEnd;
+            } else {
+                currentInterval = interval;
+
+                mergedIntervals.add(currentInterval);
+            }
+        }
+
+        return mergedIntervals.toArray((new int[mergedIntervals.size()][]));
 
     }
 
