@@ -1,48 +1,40 @@
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Main {
 
     public static void main(String args[]) {
 
-        int[][] arr = { { 1, 2 }, { 2, 6 }, { 8, 11 }, { 2, 7 }, { 12, 15 } };
+        int[] arr2 = { 2, 9, 1, 4, 5, 8, 0 };
 
-        int[][] result = mergeOverlapIntervals(arr);
+        sortArray(arr2);
 
-        System.out.println("result >>>> " + Arrays.deepToString(result));
+        System.out.println(Arrays.toString(arr2));
 
     }
 
-    private static int[][] mergeOverlapIntervals(int[][] arr) {
+    private static void sortArray(int[] arr) {
 
-        Arrays.sort(arr, (a, b) -> Integer.compare(a[0], b[0]));
+        for (int idx = 0; idx < arr.length - 1; idx++) {
 
-        List<int[]> mergedIntervals = new ArrayList<>();
+            int minIndex = idx;
 
-        int[] currentInterval = arr[0];
+            for (int j = idx + 1; j < arr.length; j++) {
 
-        mergedIntervals.add(currentInterval);
-
-        for (int[] interval : arr) {
-
-            int currentEnd = currentInterval[1];
-
-            int nextStart = interval[0];
-            int nextEnd = interval[1];
-
-            if (currentEnd >= nextStart) {
-                currentInterval[1] = nextEnd;
-            } else {
-                currentInterval = interval;
-
-                mergedIntervals.add(currentInterval);
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
             }
+
+            if (minIndex != idx) {
+                int temp = arr[idx];
+
+                arr[idx] = arr[minIndex];
+
+                arr[minIndex] = temp;
+            }
+
         }
-
-        return mergedIntervals.toArray((new int[mergedIntervals.size()][]));
-
     }
 
 }
