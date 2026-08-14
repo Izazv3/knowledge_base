@@ -1,11 +1,28 @@
-import DESIGN_PATTERNS.CREATIONAL.BuilderPattern;
 
 public class Main {
 
-    public static void main(String[] args) {
-        BuilderPattern computer = new BuilderPattern.ComputerBuilder("WD", "SONY").enableBluetooth("SAMSUNG").build();
+    private static int maxSubarraySum(int[] arr, int n) {
 
-        System.out.println(computer);
+        int currentSum = arr[0];
+        int maxSum = arr[0];
+
+        for (int i = 1; i < n; i++) {
+
+            currentSum = Math.max(arr[i], currentSum + arr[i]);
+            maxSum = Math.max(maxSum, currentSum);
+
+        }
+
+        return maxSum;
+
+    }
+
+    public static void main(String args[]) {
+        int[] arr = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+        int n = arr.length;
+        int maxSum = maxSubarraySum(arr, n);
+        System.out.println("The maximum sub sum is: " + maxSum);
+
     }
 
 }

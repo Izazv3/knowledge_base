@@ -52,3 +52,5 @@ public class overlap_subinterval {
         return mergedIntervals.toArray((new int[mergedIntervals.size()][]));
     }
 }
+
+// note : array stores only referance value if the value changed it also change

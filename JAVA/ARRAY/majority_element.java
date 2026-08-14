@@ -9,7 +9,7 @@ public class majority_element {
     }
 
     // time complexitites >> O(n^2)
-    // N/2
+    // N/2 -> majority element twice
     private static int majorityElement1(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             int count = 0;
@@ -26,7 +26,7 @@ public class majority_element {
         return -1;
     }
 
-    // N/3
+    // N/3 -> majority element tree times
     private static int majorityElement2(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             int count = 0;
