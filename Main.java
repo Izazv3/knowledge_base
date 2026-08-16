@@ -1,35 +1,41 @@
-
 import java.util.Arrays;
 
 public class Main {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
+        int[] arr = { 2, 3, 1, 0, 6, 5, 7, 4 };
 
-        int[] arr2 = { 2, 9, 1, 4, 5, 8, 0 };
+        selectionSort(arr);
 
-        sortArray(arr2);
+        findMedian(arr);
 
-        System.out.println(Arrays.toString(arr2));
-
+        System.out.println(Arrays.toString(arr));
     }
 
-    private static void sortArray(int[] arr) {
+    private static void findMedian(int[] arr) {
+        int n = arr.length;
 
-        for (int idx = 0; idx < arr.length - 1; idx++) {
+        System.out.println("median is " + arr[n / 2]);
+    }
 
-            int minIndex = idx;
+    private static void selectionSort(int[] arr) {
 
-            for (int j = idx + 1; j < arr.length; j++) {
+        for (int i = 0; i < arr.length; i++) {
+            int minIndex = i;
+
+            for (int j = i + 1; j < arr.length; j++) {
 
                 if (arr[j] < arr[minIndex]) {
+
                     minIndex = j;
                 }
+
             }
 
-            if (minIndex != idx) {
-                int temp = arr[idx];
+            if (minIndex != i) {
+                int temp = arr[i];
 
-                arr[idx] = arr[minIndex];
+                arr[i] = arr[minIndex];
 
                 arr[minIndex] = temp;
             }
