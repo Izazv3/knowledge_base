@@ -87,6 +87,8 @@ public class ReverseString {
         return count;
     }
 
+    // eg:121
+
     private static boolean isPalindrome(int n) {
 
         int original = n;

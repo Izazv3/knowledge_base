@@ -8,7 +8,7 @@ public class NextGreaterElement {
     public static void main(String[] args) {
         int[] arr = { 6, 8, 0, 1, 3 };
 
-        int[] result = nextGreaterElement2(arr);
+        int[] result = nextGreaterElement(arr);
 
         System.out.println(Arrays.toString(result));
 
@@ -24,26 +24,25 @@ public class NextGreaterElement {
 
         int[] result = new int[n];
 
-        Arrays.fill(result, -1);
+        for (int i = n - 1; i >= 0; i--) { // reverse order to keep track right elements
 
-        for (int i = 0; i < 2 * n; i++) {
-
-            int index = i % n;
-
-            while (!stack.isEmpty() && arr[index] > arr[stack.peek()]) {
-
-                result[stack.pop()] = arr[index];
-
+            while (!stack.isEmpty() && stack.peek() <= arr[i]) { // if >= it finds next smallest element
+                stack.pop();
             }
 
-            if (i < n) {
+            if (stack.isEmpty()) {
 
-                stack.push(index);
+                result[i] = -1;
+
+            } else {
+                result[i] = stack.peek();
             }
 
+            stack.push(arr[i]);
         }
 
         return result;
+
     }
 
     // normal approach brute force

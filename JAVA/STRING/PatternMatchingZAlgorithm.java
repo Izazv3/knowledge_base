@@ -8,7 +8,7 @@ public class PatternMatchingZAlgorithm {
         String text = "xyzabxyzabxyz";
         String pattern = "xyz";
 
-        findPatternIndexes(text, pattern);
+        findPatternIndexes2(text, pattern);
     }
 
     private static void findPatternIndexes(String text, String pattern) {
@@ -60,11 +60,11 @@ public class PatternMatchingZAlgorithm {
         int n = text.length();
         int m = pattern.length();
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n - m; i++) {
 
             String sub = text.substring(i, i + m);
 
-            System.out.println("Sub >>>> " + sub);
+            // System.out.println("Sub >>>> " + sub);
 
             if (sub.equals(pattern)) {
                 System.out.print(i + " ");

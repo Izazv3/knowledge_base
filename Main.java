@@ -2,45 +2,51 @@ import java.util.Arrays;
 
 public class Main {
 
-    public static void main(String[] args) {
-        int[] arr = { 2, 3, 1, 0, 6, 5, 7, 4 };
+    // public static void main(String[] args) {
+    // String text = "xyzabxyzabxyz";
+    // String pattern = "xyz";
 
-        selectionSort(arr);
+    // findPatternIndexes2(text, pattern);
+    // }
 
-        findMedian(arr);
+    // private static void findPatternIndexes2(String text, String pattern) {
 
-        System.out.println(Arrays.toString(arr));
+    // }
+
+    public static void main(String args[]) {
+        int[] arr = { 3, 1, 2, 5, 2, 6, 7, 8 };
+
+        int[] res = findRepeatMissingValue(arr);
+
+        System.out.println(Arrays.toString(res));
+
     }
 
-    private static void findMedian(int[] arr) {
-        int n = arr.length;
+    private static int[] findRepeatMissingValue(int[] arr) {
 
-        System.out.println("median is " + arr[n / 2]);
-    }
-
-    private static void selectionSort(int[] arr) {
+        int missing = -1;
+        int repeated = -1;
 
         for (int i = 0; i < arr.length; i++) {
-            int minIndex = i;
+            int count = 0;
 
-            for (int j = i + 1; j < arr.length; j++) {
+            for (int j = 0; j < arr.length; j++) {
 
-                if (arr[j] < arr[minIndex]) {
-
-                    minIndex = j;
+                if (arr[j] == i) {
+                    count++;
                 }
 
             }
 
-            if (minIndex != i) {
-                int temp = arr[i];
-
-                arr[i] = arr[minIndex];
-
-                arr[minIndex] = temp;
+            if (count == 2) {
+                repeated = i;
+            } else if (count == 0) {
+                missing = i;
             }
 
         }
+
+        return new int[] { missing, repeated };
     }
 
 }
