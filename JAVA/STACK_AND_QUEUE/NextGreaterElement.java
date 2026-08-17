@@ -8,11 +8,13 @@ public class NextGreaterElement {
     public static void main(String[] args) {
         int[] arr = { 6, 8, 0, 1, 3 };
 
-        int[] result = nextGreaterElement(arr);
+        int[] result = nextGreaterElement2(arr);
 
         System.out.println(Arrays.toString(result));
 
     }
+
+    // monotonic stack
 
     private static int[] nextGreaterElement(int[] arr) {
 
@@ -37,6 +39,32 @@ public class NextGreaterElement {
             if (i < n) {
 
                 stack.push(index);
+            }
+
+        }
+
+        return result;
+    }
+
+    // normal approach brute force
+
+    private static int[] nextGreaterElement2(int[] arr) {
+
+        int n = arr.length;
+
+        int[] result = new int[n];
+
+        for (int i = 0; i < arr.length; i++) {
+
+            result[i] = -1;
+
+            for (int j = i + 1; j < arr.length; j++) {
+
+                if (arr[j] > arr[i]) {
+                    result[i] = arr[j];
+                    break;
+                }
+
             }
 
         }
