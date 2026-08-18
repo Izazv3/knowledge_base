@@ -6,8 +6,8 @@ public class count_inversion {
 
     public static void main(String args[]) {
         int[] arr = { 5, 3, 2, 1, 4 };
-        // int res = countInversion(arr);
-        int res = mergeSort(arr, 0, arr.length - 1); // with merge sort approach
+        int res = countInversion(arr);
+        // int res = mergeSort(arr, 0, arr.length - 1); // with merge sort approach
         System.out.println("total inversion : " + res);
     }
 
@@ -80,3 +80,46 @@ public class count_inversion {
     }
 
 }
+
+// Your array
+// [5, 3, 2, 1, 4]
+
+// Let's find them:
+
+// For 5:
+
+// 5 > 3 ✅
+// 5 > 2 ✅
+// 5 > 1 ✅
+// 5 > 4 ✅
+
+// That's 4 inversions.
+
+// For 3:
+
+// 3 > 2 ✅
+// 3 > 1 ✅
+// 3 > 4 ❌
+
+// That's 2.
+
+// For 2:
+
+// 2 > 1 ✅
+// 2 > 4 ❌
+
+// That's 1.
+
+// For 1:
+
+// 1 > 4 ❌
+
+// That's 0.
+
+// Total:
+
+// 4 + 2 + 1 = 7
+
+// So:
+
+// total inversion : 7

@@ -1,6 +1,7 @@
 package JAVA.ARRAY;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class merge_twosorted_arrays {
     public static void main(String args[]) {
@@ -10,6 +11,8 @@ public class merge_twosorted_arrays {
         ArrayList<Integer> sortedArray = mergeTwoSortedArrays(arr1, arr2);
 
         System.out.println("sorted array >>> " + sortedArray.toString());
+
+        // mergeTwoSortedArrays2(arr1, arr2);
 
     }
 
@@ -47,31 +50,42 @@ public class merge_twosorted_arrays {
 
     }
 
-    // private static void mergeTwoSortedArrays(int[] arr1, int[] arr2) {
+    private static void mergeTwoSortedArrays2(int[] arr1, int[] arr2) {
 
-    // int n = arr1.length;
-    // int m = arr2.length;
+        int n = arr1.length;
+        int m = arr2.length;
 
-    // int left = n - 1;
-    // int right = 0;
+        int left = n - 1;
+        int right = 0;
 
-    // while (left >= 0 && right < m) {
-    // if (arr1[left] > arr2[right]) {
-    // System.out.println("swapped");
-    // // swap
-    // int temp = arr1[left];
-    // arr1[left] = arr2[right];
-    // arr2[right] = temp;
-    // left--;
-    // right++;
-    // } else {
-    // System.out.println("break");
-    // break;
-    // }
-    // }
+        while (left >= 0 && right < m) {
+            if (arr1[left] > arr2[right]) {
+                // System.out.println("swapped");
+                // swap
+                int temp = arr1[left];
+                arr1[left] = arr2[right];
+                arr2[right] = temp;
+                left--;
+                right++;
+            } else {
+                // System.out.println("break");
+                break;
+            }
+        }
 
-    // Arrays.sort(arr1);
-    // Arrays.sort(arr2);
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        int[] result = new int[arr1.length + arr2.length];
 
-    // }
+        for (int i = 0; i < arr1.length; i++) {
+            result[i] = arr1[i];
+        }
+
+        for (int i = 0; i < arr2.length; i++) {
+            result[arr1.length + i] = arr2[i];
+        }
+
+        System.out.println(Arrays.toString(result));
+
+    }
 }

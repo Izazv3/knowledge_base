@@ -1,52 +1,28 @@
-import java.util.Arrays;
 
 public class Main {
 
-    // public static void main(String[] args) {
-    // String text = "xyzabxyzabxyz";
-    // String pattern = "xyz";
+    public static void main(String[] args) {
+        int[] arr = { 10, 22, 5, 12, 0, 3, 6 };
 
-    // findPatternIndexes2(text, pattern);
-    // }
-
-    // private static void findPatternIndexes2(String text, String pattern) {
-
-    // }
-
-    public static void main(String args[]) {
-        int[] arr = { 3, 1, 2, 5, 2, 6, 7, 8 };
-
-        int[] res = findRepeatMissingValue(arr);
-
-        System.out.println(Arrays.toString(res));
-
+        findLeader(arr);
     }
 
-    private static int[] findRepeatMissingValue(int[] arr) {
+    private static void findLeader(int[] arr) {
 
-        int missing = -1;
-        int repeated = -1;
+        int n = arr.length;
 
-        for (int i = 0; i < arr.length; i++) {
-            int count = 0;
+        int maxRight = arr[n - 1];
 
-            for (int j = 0; j < arr.length; j++) {
+        System.out.println(maxRight);
 
-                if (arr[j] == i) {
-                    count++;
-                }
+        for (int i = n - 2; i >= 0; i--) {
 
-            }
-
-            if (count == 2) {
-                repeated = i;
-            } else if (count == 0) {
-                missing = i;
+            if (arr[i] > maxRight) {
+                System.out.println(arr[i]);
+                maxRight = arr[i];
             }
 
         }
-
-        return new int[] { missing, repeated };
     }
 
 }

@@ -27,3 +27,7 @@ public class FindLeader {
     }
 
 }
+
+// 22 > 5, 12, 0, 3, 6 ✅
+// 12 > 0, 3, 6 ✅
+// 6 → nothing on right ✅

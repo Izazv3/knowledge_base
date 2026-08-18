@@ -7,7 +7,7 @@ public class matrix_zero {
 
         printMatrix(matrix);
 
-        setMatrixZeroOptimal(matrix);
+        setMatrixZero(matrix);
 
         printMatrix(matrix);
 
@@ -26,13 +26,13 @@ public class matrix_zero {
 
         // -1 becuase if we set zero it will affect the matrix avoid overwriting
 
-        // for (int i = 0; i < matrix.length; i++) {
-        // for (int j = 0; j < matrix[0].length; j++) {
-        // if (matrix[i][j] == -1) {
-        // matrix[i][j] = 0;
-        // }
-        // }
-        // }
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] == -1) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
 
         printMatrix(matrix);
 
